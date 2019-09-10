@@ -1,0 +1,90 @@
+<!-- Extended default form grid -->
+<div class="container-fluid">
+  <div class="row nav-bar">
+    <label class="logo">intergreatme</label>
+    <h1 class="header">QR <span>[<ode]</span> Generator</h1>
+    <button mdbBtn class="support btn-outline-primary" mdbWavesEffect>Support</button>
+  </div>
+  <div class="row  app-section">
+    <div class="col-md-8 text-center">
+      <form>
+        <div class="form-row">
+          <label class="form-label">Information<i class="fas fa-user pr-2" aria-hidden="true"></i></label>
+        </div>
+            <!-- Grid row -->
+        <div class="form-row">
+          <!-- Default input -->
+          <div class="form-group col-md-4">
+              <label for="firstname">First Name</label>
+            <input mdbInput type="text" class="form-control" id="firstname">
+          </div>
+          <!-- Default input -->
+          <div class="form-group col-md-4">
+              <label for="lastname">Last Name</label>
+            <input mdbInput type="text" class="form-control" id="lastname" >
+          </div>
+          <div class="form-group col-md-4">
+              <label for="orgname">Organization Name</label>
+            <input mdbInput type="text" class="form-control" id="orgname" >
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="position">Position (work)</label>
+            <input mdbInput type="text" class="form-control" id="position">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="phone">Phone (mobile)</label>
+            <input mdbInput type="phone" class="form-control" id="phone">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Email</label>
+            <input mdbInput type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          </div>
+        </div>
+        <!-- Grid row -->
+
+        <div class="form-row">
+            <!-- Default input -->
+            <div class="form-group col-md-4">
+                <label for="website">Website</label>
+              <input mdbInput type="text" class="form-control" id="website">
+            </div>
+            <!-- Default input -->
+            <div class="form-group col-md-4">
+                <label for="address">Address</label>
+              <input mdbInput type="text" class="form-control" id="address" >
+            </div>
+            <div class="form-group col-md-4">
+                <label for="notes">Notes</label>
+              <input mdbInput type="text" class="form-control" id="notes" >
+            </div>
+        </div>
+        <button mdbBtn type="button" color="info" class="add-logo-btn" mdbWavesEffect>Add Logo<i class="fas fa-image pr-2" aria-hidden="true"></i></button>
+        <button mdbBtn type="button" color="info" class="phone-size" mdbWavesEffect>Select Phone Size</button>
+      </form>
+
+      <button mdbBtn type="button" color="default" class="generate-btn" mdbWavesEffect>Generate My QR Code</button>
+      <h4 class="card-title h4 pb-2">By clicking generate you agree to our <strong>Terms & privacy policy</strong></h4>
+    </div>
+    <div class="col-md-4">
+      <div class="right-section text-center">
+        <div class="col-md-12">
+            <label class="preview-label" size="lg">My QR Code Preview</label>
+        </div>
+        <div class="col-md-12 image-block">
+          <img src="/assets/back-qr.png" width="50%" alt="Responsive image">
+        </div>
+      </div>
+      <div class="input-group mb-3 send-email-btn-group">
+        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          aria-describedby="button-addon1">
+        <div class="input-group-append">
+          <button mdbBtn color="primary" size="md" class="m-0 px-3 py-2" type="button" id="button-addon1"
+            mdbWavesEffect><i class="fas fa-envelope pr-2" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+  <!-- Extended default form grid -->
+  </div>
+</div>
