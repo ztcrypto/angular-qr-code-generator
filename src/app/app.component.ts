@@ -9,15 +9,15 @@ import * as QRCode from 'easyqrcodejs';
 export class AppComponent {
   title = 'qr-code-app';
   public qrcode: any = null;
-  public fname: string = "";
-  public lname: string = "";
-  public orgname: string = "";
-  public position: string = "";
-  public phone: string = "";
-  public email: string = "";
-  public url: string = "";
-  public address: string = "";
-  public notes: string = "";
+  public fname = '';
+  public lname = '';
+  public orgname = '';
+  public position = '';
+  public phone = '';
+  public email = '';
+  public url = '';
+  public address = '';
+  public notes = '';
 
   generateQRCode(): void {
     var codeText = "BEGIN:VCARD\r\nVERSION:3.0\r\nN:";
