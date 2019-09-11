@@ -57,18 +57,13 @@ div.app-section {
         font-size: 1.5em;
       }
     }
-    .add-logo-btn, .phone-size {
-      font-size: 1.5em;
-    }
-    .add-logo-btn i {
-      font-size: 1em;
-      margin-left: 6em;
-      margin-top: 0.2em;
-    }
   }
   .generate-btn {
     font-size: 2em;
     padding: 0.9em 4em;
+  }
+  h4 strong {
+    text-decoration: underline;
   }
 }
 div.right-section {
@@ -90,6 +85,11 @@ div.right-section {
     background: #0099CC;
     margin-bottom: 1.2em;
     margin-top: 20px;
+  }
+  div#qrcode {
+    position: absolute;
+    top: 32%;
+    left: calc(50% - 60px);
   }
 }
 .send-email-btn-group {
