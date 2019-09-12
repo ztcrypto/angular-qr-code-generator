@@ -28,6 +28,24 @@ body {
   .support {
     font-size: 1.3em;
   }
+
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 1.5em;
+      height: 2.5em;
+      flex: 1 10px;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+    .header {
+      display: none;
+    }
+    .support {    
+      font-size: 1em;
+      margin: 0;
+      margin-left: 20px;
+    }
+  }
 }
 div.app-section {
   background: #DDD;
@@ -60,9 +78,18 @@ div.app-section {
     }
     @media screen and (max-width: 1024px) {
       .form-label {
-        padding: 0.5em;
+        padding: 0.2em;
         i {
           margin-left: 1em;
+        }
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .form-label {
+        padding: 0.3em;
+        i {
+          font-size: 1em;
+          margin-left: 0.2em;
         }
       }
     }
@@ -109,6 +136,21 @@ div.right-section {
     top: 32%;
     left: calc(50% - 60px);
   }
+  @media screen and (max-width: 480px) {
+    .preview-label {
+      padding: 0.3em;
+    }
+    div.image-block {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .preview-label {
+      font-size: 1.5em;
+    }
+  }
   @media screen and (max-width: 1024px) {
     .preview-label {
       padding: 0.3em;
@@ -121,7 +163,7 @@ div.right-section {
     }
     div#qrcode {
       position: absolute;
-      top: calc(50% - 100px);
+      top: calc(50% - 110px);
       left: calc(50% - 70px);
     }
   }
@@ -147,6 +189,27 @@ div.right-section {
       font-size: 3.5em;
       color: white;
       padding: 0px !important;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .send-email-btn-group {
+    margin-top: 1em;
+    input {
+      font-size: 1em;
+      border-radius: 10px;
+    }
+    input:focus {
+      box-shadow: none;
+      z-index: 0;
+    }
+    button {
+      border-radius: 10px;
+      margin-left: -10px !important;
+      padding: 0em 1em !important;
+      i {
+        font-size: 2em;
+      }
     }
   }
 }
