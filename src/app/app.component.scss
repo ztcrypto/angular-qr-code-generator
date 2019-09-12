@@ -1,3 +1,5 @@
+
+
 body {
   background: #DDD;
 }
@@ -46,10 +48,9 @@ div.app-section {
     .form-label {
       border-radius: 15px;
       margin: 0px;
-      height: 2.5em;
       color: white;
       padding: 0.5em 40px;
-      font-size: 25px;
+      font-size: 1.8em;
       background: #0099CC;
       margin-bottom: 1.2em;
       i {
@@ -57,10 +58,28 @@ div.app-section {
         font-size: 1.5em;
       }
     }
+    @media screen and (max-width: 1024px) {
+      .form-label {
+        padding: 0.5em;
+        i {
+          margin-left: 1em;
+        }
+      }
+    }
   }
   .generate-btn {
     font-size: 2em;
     padding: 0.9em 4em;
+  }
+  @media screen and (max-width: 1024px) {
+    .generate-btn {
+      padding: 0.3em;
+    }
+    .form-label {
+      i {
+        margin-left: 1em;
+      }
+    }
   }
   h4 strong {
     text-decoration: underline;
@@ -78,10 +97,9 @@ div.right-section {
   .preview-label {
     border-radius: 15px;
     margin: 0px;
-    height: 2.5em;
     color: white;
     padding: 0.5em 4em;
-    font-size: 25px;
+    font-size: 1.8em;
     background: #0099CC;
     margin-bottom: 1.2em;
     margin-top: 20px;
@@ -91,7 +109,26 @@ div.right-section {
     top: 32%;
     left: calc(50% - 60px);
   }
+  @media screen and (max-width: 1024px) {
+    .preview-label {
+      padding: 0.3em;
+    }
+    div.image-block {
+      padding: 20px !important;
+      img {
+        width: 90%;
+      }
+    }
+    div#qrcode {
+      position: absolute;
+      top: calc(50% - 100px);
+      left: calc(50% - 70px);
+    }
+  }
 }
+
+
+
 .send-email-btn-group {
   margin-top: 1em;
   input {
