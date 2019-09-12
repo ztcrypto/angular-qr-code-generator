@@ -34,8 +34,8 @@ body {
       font-size: 1.5em;
       height: 2.5em;
       flex: 1 10px;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
+      padding-left: 0.2em;
+      padding-right: 0.2em;
     }
     .header {
       display: none;
@@ -146,11 +146,6 @@ div.right-section {
       }
     }
   }
-  @media screen and (max-width: 480px) {
-    .preview-label {
-      font-size: 1.5em;
-    }
-  }
   @media screen and (max-width: 1024px) {
     .preview-label {
       padding: 0.3em;
@@ -162,9 +157,17 @@ div.right-section {
       }
     }
     div#qrcode {
-      position: absolute;
       top: calc(50% - 110px);
       left: calc(50% - 70px);
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .preview-label {
+      font-size: 1.5em;
+    }
+    div#qrcode {
+      top: calc(50% - 70px);
+      left: calc(50% - 50px);
     }
   }
 }

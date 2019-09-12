@@ -34,13 +34,17 @@ export class AppComponent {
 
     console.log(codeText);
     console.log(codeText.length);
+    console.log(screen.width);
+    var imagesize = 150;
+    if(screen.width < 480) imagesize = 100;
+    console.log(imagesize);
 
     const config = {
       title: "Logo",
       config: {
         text: codeText, // Content
-        width: 150, // Widht
-        height: 150, // Height
+        width: imagesize, // Widht
+        height: imagesize, // Height
         colorDark: "#000000", // Dark color
         colorLight: "#ffffff", // Light color
         // === Logo
