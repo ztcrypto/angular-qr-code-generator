@@ -10,25 +10,23 @@ export class AppComponent {
   title = 'qr-code-app';
   public qrcode: any = null;
   public fname = '';
+  public gname = '';
   public lname = '';
-  public orgname = '';
   public position = '';
   public phone = '';
   public email = '';
-  public url = '';
-  public address = '';
+  public url = location.href;
   public notes = '';
 
   generateQRCode(): void {
     var codeText = "BEGIN:VCARD\r\nVERSION:3.0\r\nN:";
     codeText += this.lname + ";" + this.fname + "\r\n";
     codeText += "FN:" + this.fname + " " + this.lname + "\r\n";
-    codeText += "ORG:" + this.orgname + "\r\n";
+    codeText += "ORG:" + this.position + "\r\n";
     codeText += "URL:" + this.url + "\r\n";
     codeText += "EMAIL;TYPE=INTERNET:" + this.email + "\r\n";
-    codeText += "TEL;TYPE=voice,cell,pref:" + this.phone + "\r\n";
-    codeText += "ADR:" + this.address + "\r\n";
-    codeText += "NOTES:" + this.notes + "\r\n";
+    codeText += "TEL:" + this.phone + "\r\n";
+    codeText += "NOTE:" + "Click the link above to make your own QR Code"+ "\r\n";
     codeText += "END:VCARD";
     codeText = decodeURIComponent(codeText);
 
@@ -38,6 +36,7 @@ export class AppComponent {
     var imagesize = 150;
     if(screen.width < 480) imagesize = 100;
     console.log(imagesize);
+    this.gname = this.fname.split(" ")[0];
 
     const config = {
       title: "Logo",

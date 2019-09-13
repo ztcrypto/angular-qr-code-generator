@@ -1,9 +1,7 @@
 <!-- Extended default form grid -->
 <div class="container-fluid">
   <div class="row nav-bar">
-    <label class="logo">intergreatme</label>
-    <h1 class="header">QR <span>[code]</span> Generator</h1>
-    <button mdbBtn class="support btn-outline-primary" mdbWavesEffect>Support</button>
+    <label class="logo"><a href="https://www.intergreatme.com" target="_new">intergreatme</a></label>
   </div>
   <div class="row  app-section">
     <div class="col-md-8 text-center">
@@ -15,55 +13,33 @@
         <div class="form-row">
           <!-- Default input -->
           <div class="form-group col-md-4">
-              <label for="firstname">First Name</label>
-            <input mdbInput type="text" class="form-control" id="firstname" [(ngModel)]="fname" name="fname">
+              <label for="firstname">Names</label>
+            <input mdbInput type="text" class="form-control" id="firstname" [(ngModel)]="fname" name="fname" placeholder="Luke Dominique">
           </div>
           <!-- Default input -->
           <div class="form-group col-md-4">
-              <label for="lastname">Last Name</label>
-            <input mdbInput type="text" class="form-control" id="lastname" [(ngModel)]="lname" name="lname">
+              <label for="lastname">Surname</label>
+            <input mdbInput type="text" class="form-control" id="lastname" [(ngModel)]="lname" name="lname" placeholder="Warner">
           </div>
           <div class="form-group col-md-4">
-              <label for="orgname">Organization Name</label>
-            <input mdbInput type="text" class="form-control" id="orgname" [(ngModel)]="orgname" name="orgname">
+            <label for="position">Title at Company</label>
+            <input mdbInput type="text" class="form-control" id="position" [(ngModel)]="position" name="position" placeholder="CEO of intergreatme">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
-            <label for="position">Position (work)</label>
-            <input mdbInput type="text" class="form-control" id="position" [(ngModel)]="position" name="position">
+            <label for="phone">Mobile Number</label>
+            <input mdbInput type="phone" class="form-control" id="phone" [(ngModel)]="phone" name="phone" placeholder="+27823936145">
           </div>
           <div class="form-group col-md-4">
-            <label for="phone">Phone (mobile)</label>
-            <input mdbInput type="phone" class="form-control" id="phone" [(ngModel)]="phone" name="phone">
+            <label for="inputEmail4">Email Address</label>
+            <input mdbInput type="email" class="form-control" id="inputEmail4" placeholder="" [(ngModel)]="email" name="email" placeholder="luke@intergreatme.com">
           </div>
-          <div class="form-group col-md-4">
-            <label for="inputEmail4">Email</label>
-            <input mdbInput type="email" class="form-control" id="inputEmail4" placeholder="" [(ngModel)]="email" name="email">
-          </div>
-        </div>
-        <!-- Grid row -->
-
-        <div class="form-row">
-            <!-- Default input -->
-            <div class="form-group col-md-4">
-                <label for="website">Website</label>
-              <input mdbInput type="text" class="form-control" id="website" [(ngModel)]="url" name="url">
-            </div>
-            <!-- Default input -->
-            <div class="form-group col-md-4">
-                <label for="address">Address</label>
-              <input mdbInput type="text" class="form-control" id="address" [(ngModel)]="address" name="address">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="notes">Notes</label>
-              <input mdbInput type="text" class="form-control" id="notes" [(ngModel)]="notes" name="notes">
-            </div>
         </div>
       </form>
 
       <button mdbBtn type="button" color="default" class="generate-btn" (click)="generateQRCode()" mdbWavesEffect>Generate My QR Code</button>
-      <h4 class="card-title h4 pb-2">By clicking generate you agree to our <a href="https://www.intergreatme.com/terms-and-privacy/" target="_new"><strong>Terms & privacy policy</strong></a></h4>
+      <h5 class="card-title h5 pb-2">By clicking generate you agree to our <a href="https://www.intergreatme.com/terms-and-privacy/" target="_new"><strong>Terms & privacy policy</strong></a></h5>
     </div>
     <div class="col-md-4">
       <div class="right-section text-center">
@@ -72,16 +48,12 @@
         </div>
         <div class="col-md-12 image-block">
           <div>
-          <img src="/assets/back-qr.png" width="50%" alt="Responsive image">
-          <div id="qrcode"></div><div>
-        </div>
-      </div>
-      <div class="input-group mb-3 send-email-btn-group">
-        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
-          aria-describedby="button-addon1">
-        <div class="input-group-append">
-          <button mdbBtn color="primary" size="md" class="m-0 px-3 py-2" type="button" id="button-addon1"
-            mdbWavesEffect><i class="fas fa-envelope pr-2" aria-hidden="true"></i></button>
+            <img src="/assets/back-qr.png" width="50%" alt="Responsive image">
+            <div class="qrcode-img">
+              <div id="qrcode"></div>
+              <label>{{gname}}</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
