@@ -91,12 +91,12 @@ div.app-section {
   }
 }
 div.right-section {
-  background: white;
   border-radius: 15px;
   div.image-block {
-    padding: 20px !important;
+    padding: 0px !important;
     img {
-      border-radius: 10px
+      border-radius: 10px;
+      width: 90%;
     }
   }
   .preview-label {
@@ -116,26 +116,20 @@ div.right-section {
     label {
       margin-top: 5px;
     }
-
   }
-  @media screen and (max-width: 480px) {
-    .preview-label {
-      padding: 0.3em;
-    }
-    div.image-block {
-      img {
-        width: 100%;
-      }
-    }
+  #qrcode  {
+    image-rendering: pixelated;
+  }
+  a.download-image {
+    display: none;
   }
   @media screen and (max-width: 1024px) {
     .preview-label {
       padding: 0.3em;
     }
     div.image-block {
-      padding: 20px !important;
       img {
-        width: 90%;
+        width: 100%;
       }
     }
     div.qrcode-img {
@@ -148,8 +142,8 @@ div.right-section {
       font-size: 1.5em;
     }
     div.qrcode-img {
-      top: calc(50% - 65px);
-      left: calc(50% - 52px);
+      top: calc(50% - 55px);
+      left: calc(50% - 60px);
     }
   }
 }

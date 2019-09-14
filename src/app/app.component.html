@@ -47,14 +47,15 @@
             <label class="preview-label" size="lg">My QR Code Preview</label>
         </div>
         <div class="col-md-12 image-block">
-          <div>
-            <img src="/assets/back-qr.png" width="50%" alt="Responsive image">
+          <div class="image-content">
+            <img src="/assets/back-qr.png" alt="Responsive image">
             <div class="qrcode-img">
               <div id="qrcode"></div>
               <label>{{gname}}</label>
             </div>
           </div>
         </div>
+        <button mdbBtn type="button" color="default" class="generate-btn" (click)="saveImage()" mdbWavesEffect>Save Image</button>
       </div>
     </div>
   <!-- Extended default form grid -->
