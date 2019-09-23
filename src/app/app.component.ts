@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import * as QRCode from 'easyqrcodejs';
 import domtoimage from 'dom-to-image';
+// tslint:disable-next-line: prefer-const
+import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +21,8 @@ export class AppComponent {
   public url = 'intergreatme-qr.herokuapp.com';
   public notes = '';
 
+  constructor(private http: HttpClient) {
+  }
   generateQRCode(): void {
 
     let codeText = 'BEGIN:VCARD\r\nVERSION:3.0\r\nN:';
@@ -34,7 +38,7 @@ export class AppComponent {
 
     console.log(codeText);
     let imagesize = 150;
-    if (screen.width < 480) { imagesize = 120; }
+    if (screen.width < 480) { imagesize = 110; }
     console.log(imagesize);
     this.gname = this.fname.split(' ')[0];
 
@@ -50,13 +54,45 @@ export class AppComponent {
         logo: 'assets/logo.png', // LOGO
         logoBackgroundColor: '#ffffff', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
         logoBackgroundTransparent: false, // Whether use transparent image, default is false
-        correctLevel: QRCode.CorrectLevel.M // L, M, Q, H
+        correctLevel: QRCode.CorrectLevel.L // L, M, Q, H
       }
     };
     if (this.qrcode != null) { this.qrcode.clear(); }
     this.qrcode = new QRCode(document.getElementById('qrcode'), config.config);
-    document.querySelector('#qrcode img').setAttribute('style', 'width: 120px');
+ //   document.querySelector('#qrcode img').setAttribute('style', 'width: 120px');
    // document.querySelector('#qrcode img').clientWidth = 120;
+
+    /*
+    var mailchimp = new Mailchimp("19d84f3037d02061281b4602c0ad2d35-us4");
+
+    mailchimp.post({
+        path : '/lists/c21d6d86f2/members',
+        body: {
+            email_address : 'sddf7se@bsedf.com',
+            status : 'subscribed',
+            merge_fields: {
+                'FNAME': "sdf",
+                'LNAME': "sdfa",
+                'PHONE': "234234234"
+            }
+          }
+      }, function (err, result) {
+        console.log(result);
+      }) */
+    this.http.post('/api',
+    {
+      fname: this.fname,
+      lname: this.lname,
+      email: this.email,
+      phone: this.phone
+    })
+    .subscribe(
+    data  => {
+     console.log('POST Request is successful ', data);
+    },
+    error  => {
+      console.log('Error', error);
+    });
   }
   saveImage(): void {
     domtoimage.toPng(document.querySelector('.image-content'))
